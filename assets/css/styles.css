@@ -925,6 +925,21 @@ p { margin: 0 0 1.1em; }
 .cta h2 { color: #fff; }
 .cta .lead { color: #d6cceb; margin: 0 auto 34px; }
 .cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+/* The CTA band sits in its own section: full spacing after a tinted
+   section, none after a plain one (that section's padding already separates them). */
+.section--cta { padding-block: clamp(56px, 7vw, 100px); }
+.section:not([class*="section--"]) + .section--cta { padding-top: 0; }
+.cta .eyebrow { color: var(--lavender-300); }
+.cta .eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; opacity: 0.6; }
+
+/* Lighter gradient text on dark backgrounds for contrast */
+.section--dark .text-gradient,
+.cta .text-gradient {
+  background: linear-gradient(100deg, #e0d6f5 0%, #c4b3ea 40%, #f2c6de 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 .cta .blob--1 { width: 400px; height: 400px; top: -200px; right: -100px; }
 .cta .blob--2 { width: 360px; height: 360px; bottom: -200px; left: -60px; }
 
@@ -1467,6 +1482,7 @@ body.is-leaving { opacity: 0; transition: opacity 0.3s ease; }
   .menu-group__head { flex-direction: column; align-items: flex-start; }
   .tabs { width: 100%; justify-content: flex-start; }
   .mobile-book { display: block; }
+  .footer__bottom { padding-bottom: 96px; }
   .cta { border-radius: 26px; }
   .faq summary { font-size: 1.15rem; padding: 18px 20px; }
   .faq__body { padding: 0 20px 20px; }

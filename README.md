@@ -1,6 +1,6 @@
 # Lavender Spa & Boutique — website redesign
 
-A fast, fully static redesign of [lavenderspa.ca](https://www.lavenderspa.ca/) for Lavender Spa & Boutique, 275 Erie St S, Leamington, ON.
+A fast, fully static redesign of [lavenderspa.ca](https://www.lavenderspa.ca/) for Lavender Spa & Boutique, 1 Queens Ave, Leamington, ON N8H 2Z2.
 
 No build step and no frameworks: plain HTML, one stylesheet and one script. Open `index.html` or host the folder on any static host (Netlify, GitHub Pages, Cloudflare Pages, etc.).
 
