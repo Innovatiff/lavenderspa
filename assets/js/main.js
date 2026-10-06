@@ -450,6 +450,31 @@
     });
   }
 
+  /* ---------------------------------------------------------------------- */
+  /* Swipe carousel dots (carousels are CSS-only; dots show on phones)      */
+  /* ---------------------------------------------------------------------- */
+  doc.querySelectorAll(".swipe").forEach(function (track) {
+    var items = track.children;
+    if (items.length < 2) return;
+    var dots = doc.createElement("div");
+    dots.className = "swipe-dots";
+    dots.setAttribute("aria-hidden", "true");
+    for (var i = 0; i < items.length; i++) dots.appendChild(doc.createElement("span"));
+    track.parentNode.insertBefore(dots, track.nextSibling);
+    var pending = false;
+    function update() {
+      pending = false;
+      var step = items[1].offsetLeft - items[0].offsetLeft || 1;
+      var max = track.scrollWidth - track.clientWidth;
+      var idx = track.scrollLeft >= max - 4 ? items.length - 1 : Math.round(track.scrollLeft / step);
+      Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle("is-active", n === idx); });
+    }
+    track.addEventListener("scroll", function () {
+      if (!pending) { pending = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  });
+
   /* Year */
   doc.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
