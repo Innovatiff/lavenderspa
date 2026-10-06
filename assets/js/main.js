@@ -79,7 +79,7 @@
   var header = doc.querySelector(".header");
   var progress = doc.querySelector(".scroll-progress");
   var toTop = doc.querySelector(".to-top");
-  var ring = doc.querySelector(".to-top__ring circle");
+  var ring = doc.querySelector(".to-top__bar");
   var mobileBook = doc.querySelector(".mobile-book");
   var ticking = false;
 
@@ -89,8 +89,8 @@
     var pct = max > 0 ? y / max : 0;
     if (header) header.classList.toggle("is-scrolled", y > 20);
     if (progress) progress.style.transform = "scaleX(" + pct + ")";
-    if (toTop) toTop.classList.toggle("is-visible", y > 600);
-    if (ring) ring.style.strokeDashoffset = String(151 - 151 * pct);
+    if (toTop) toTop.classList.toggle("is-visible", y > 500);
+    if (ring) ring.style.strokeDashoffset = String(100 - 100 * pct);
     if (mobileBook) mobileBook.classList.toggle("is-visible", y > 500);
     ticking = false;
   }
