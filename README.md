@@ -25,5 +25,5 @@ All colours, gradients, radii and shadows are CSS variables at the top of `asset
 
 ## Before going live
 - Prices marked **"Call for pricing"** weren't publicly listed; fill them in on `services.html`.
-- Illustrations are inline SVG art. To use real photos, replace the SVG inside `.frame`, `.category-card__art` or `.product__art` with an `<img loading="lazy">`.
+- Photos are free Unsplash stock images (see `assets/img/CREDITS.md`). Swap them for photos of the actual spa when available: keep the same file names, or update the `<img>` tags in `.hero__arch`, `.frame`, `.category-card__art` and `.product__art`.
 - To use an online booking system, point the "Book" links (`contact.html#book`) at its URL.

@@ -318,7 +318,7 @@
   /* Hero parallax                                                          */
   /* ---------------------------------------------------------------------- */
   var parallax = doc.querySelectorAll("[data-parallax]");
-  if (parallax.length && !reduceMotion) {
+  if (parallax.length && !reduceMotion && window.innerWidth > 900) {
     window.addEventListener("scroll", function () {
       var y = window.scrollY;
       if (y > window.innerHeight * 1.2) return;
